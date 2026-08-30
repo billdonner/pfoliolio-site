@@ -18,9 +18,10 @@ stand unchanged when the app moves to Steve's LLC as seller of record.
    - `CNAME` www → `billdonner.github.io`
    Then GitHub → repo Settings → Pages → Custom domain `pfoliolio.com`,
    and tick **Enforce HTTPS** once the certificate issues.
-2. **Email**: the pages currently show `billdonner@gmail.com` because it
-   WORKS. Set up IONOS forwarding for `support@pfoliolio.com` and swap it
-   in — never publish a support address that bounces; App Review checks.
+2. **Email**: the pages show `midnightrambler@gmail.com` (Bill's choice,
+   2026-08-30) because it WORKS. If `support@pfoliolio.com` forwarding is
+   set up at IONOS later, swap it in — never publish a support address
+   that bounces; App Review checks.
 3. **pfoliolio.app** is registered too and currently unused — point it at
    the same site or leave parked.
 
