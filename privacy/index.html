@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pfoliolio — Privacy Policy</title><link rel="stylesheet" href="/style.css"></head><body>
+<div class="wrap">
+<nav><a href="/">Pfoliolio</a><a href="/">Support</a><a href="/privacy">Privacy</a></nav>
+
+<h1>Pfoliolio Privacy Policy</h1>
+<p class="tag">Last updated 17 August 2026</p>
+
+<p>Pfoliolio tracks investment holdings across your accounts. It is a tracker,
+not a brokerage: it executes no trades and gives no financial advice. This
+policy describes exactly what leaves your device, where it goes, and how long
+it is kept.</p>
+
+<h2>The server</h2>
+<p>The app has one server, <code>bd-pfolio.fly.dev</code>, operated by the
+developer on Fly.io. All transport is HTTPS.</p>
+
+<h2>Sign-in</h2>
+<p>When you sign in, the app sends your Apple identity token. We keep Apple's
+per-app user identifier and, <em>on first sign-in only</em>, the email address
+Apple supplies. After that the app authenticates with a random session token
+stored in your device Keychain; the server holds only a SHA-256 hash of it.
+Sessions expire after 90 days and are revoked server-side when you sign out.</p>
+
+<h2>Your investment data</h2>
+<p>Your holdings travel <strong>server-to-server, not from your device</strong>.
+The server retrieves accounts, securities, and holdings from Plaid using a
+read-only access token.</p>
+<p>You enter your brokerage credentials on Plaid's own hosted page in the
+browser. <strong>Neither the app nor our server ever sees your brokerage
+username or password.</strong> Read-only means the connection cannot trade,
+transfer, or withdraw — that is a property of the Plaid product scope, not a
+promise we are making on its behalf.</p>
+
+<h2>What the app sends</h2>
+<p>From your device, the server receives what you type: questions to the
+assistant, manually entered holdings, classification corrections, account
+nicknames, and allocation targets.</p>
+
+<h2>The Q&amp;A assistant — your choice of three</h2>
+<p>You choose which AI answers your questions, in Settings. Whichever you pick,
+the payload is the same: your question, up to the last six turns of your
+conversation, and a JSON snapshot of the same portfolio data the dashboard
+shows — tickers, security names, dollar values, account names and types,
+institution names, and the last-four account mask. It never includes your
+name, email, Apple identifier, or any Plaid token.</p>
+<ul>
+<li><strong>Anthropic Claude</strong> (the default) — the payload goes to
+Anthropic's servers via our backend; excluded from training under Anthropic's
+commercial API terms.</li>
+<li><strong>OpenAI ChatGPT</strong> — the payload goes to OpenAI's servers via
+our backend instead; API content is excluded from training under OpenAI's
+terms by default.</li>
+<li><strong>Apple Intelligence</strong> — the model runs <strong>on your
+device</strong>. For this choice, your question and portfolio snapshot do not
+leave the device for the Q&amp;A feature at all. (Requires hardware with
+Apple Intelligence.)</li>
+</ul>
+<p>For the two server-side choices, questions and answers are also stored in
+our database so the conversation has continuity. The app shows each choice's
+data path right under the picker.</p>
+
+<h2>Retention</h2>
+<ul>
+<li>Holdings are replaced on every sync — sold positions are deleted, not archived.</li>
+<li>Plaid access tokens are kept for as long as an institution stays connected. Disconnecting an institution, or using the in-app reset, deletes the connection and its holdings.</li>
+<li>Q&amp;A history is kept server-side to provide conversation context.</li>
+<li>Daily allocation snapshots are kept to draw the history chart.</li>
+<li>Deleting your account deletes all of your data together, by database-level cascade.</li>
+</ul>
+
+<h2>Tracking, advertising, and training</h2>
+<p>The app contains no analytics, advertising, or tracking SDKs. Nothing is
+collected for advertising. Nothing is sold, and nothing is shared beyond the two
+service providers named here: <strong>Plaid</strong> and
+<strong>Anthropic</strong>.</p>
+<p>Your data is not used to train any model — ours (we have none) or Anthropic's
+(excluded under their commercial API terms). It is not used for advertising or
+shared for tracking, in the App Privacy sense or any other.</p>
+
+<h2>Deleting your data, in the app</h2>
+<p><strong>Settings &rarr; Delete Account</strong> permanently erases your
+account and everything under it — connections, holdings, classifications,
+targets, and Ask history — revokes our access at Plaid, and revokes the app's
+Sign in with Apple grant at Apple. <strong>Manage Connections &rarr;
+Disconnect</strong> does the same for a single institution.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:billdonner@gmail.com">billdonner@gmail.com</a></p>
+
+<footer>© 2026 Pfoliolio · <a href="mailto:billdonner@gmail.com">billdonner@gmail.com</a></footer>
+</div></body></html>
